@@ -1,4 +1,3 @@
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
@@ -10,7 +9,7 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    baseURL: process.env.NODE_ENV === "production" ? "/auth/" : "/",
+    baseURL: process.env.NODE_ENV === "production" ? "/nuxt-auth/" : "/",
     buildAssetsDir: "/_nuxt/",
   },
   ssr: false,
