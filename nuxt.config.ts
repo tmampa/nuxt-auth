@@ -6,5 +6,15 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image'
-  ]
+  ],
+  nitro: {
+    prerender: {
+      routes: ['/']
+    }
+  },
+  app: {
+    baseURL: process.env.NODE_ENV === 'production' ? '/auth/' : '/',
+    buildAssetsDir: '/_nuxt/'
+  },
+  ssr: false
 })
