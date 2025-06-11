@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   },
   app: {
     baseURL: process.env.NODE_ENV === "production" ? "/nuxt-auth/" : "/",
-    buildAssetsDir: "/_nuxt/",
+    buildAssetsDir: "/nuxt-auth/",
   },
   ssr: false,
 });
