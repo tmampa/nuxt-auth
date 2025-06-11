@@ -1,5 +1,6 @@
 <template>
   <div>
-    <h1 class="text-3xl font-bold underline text-center text-violet-900">Hello Auth!</h1>
+    <h1>Next Auth</h1>
+    <p>Welcome to Next Auth</p>
   </div>
 </template>
