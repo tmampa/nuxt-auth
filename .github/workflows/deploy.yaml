@@ -40,6 +40,7 @@ jobs:
         uses: actions/configure-pages@v4
         with:
           static_site_generator: nuxt
+          enablement: true
 
       - name: Build
         run: pnpm generate
