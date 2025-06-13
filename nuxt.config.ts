@@ -2,9 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/fonts", "@nuxt/icon", "@nuxt/image", "@nuxtjs/tailwindcss", "nuxt-mongoose"],
+  modules: ["@nuxt/fonts", "@nuxt/icon", "@nuxt/image", "@nuxtjs/tailwindcss"],
   css: ["./assets/style.css"],
-  mongoose: {
-    uri: process.env.MONGODB_URI ,
-  }
 });
