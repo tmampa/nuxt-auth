@@ -1,10 +1,13 @@
 import { createAuthClient } from "better-auth/vue";
 export const authClient = createAuthClient({
-    baseURL: process.env.BETTER_AUTH_URL || "http://localhost:3000",
+  baseURL: process.env.BETTER_AUTH_URL || "http://localhost:3000",
 });
 
-const signIn = async () => {
-  const data = await authClient.signIn.social({
-    provider: "github",
-  });
-};
+export const {
+  signIn,
+  signOut,
+  signUp,
+  useSession,
+  requestPasswordReset,
+  resetPassword,
+} = authClient;

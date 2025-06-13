@@ -1,15 +1,11 @@
 import { betterAuth } from "better-auth";
-import { MongoClient } from "mongodb";
-import { mongodbAdapter } from "better-auth/adapters/mongodb";
-
-const client = new MongoClient(process.env.MONGODB_URI as string);
-const db = client.db();
+import { prismaAdapter } from "better-auth/adapters/prisma";
+import prisma from "./prisma";
 
 export const auth = betterAuth({
-  database: mongodbAdapter(db),
-  emailAndPassword: {
-    enabled: true,
-  },
+  database: prismaAdapter(prisma, {
+    provider: "postgresql",
+  }),
   socialProviders: {
     github: {
       clientId: process.env.GITHUB_CLIENT_ID as string,

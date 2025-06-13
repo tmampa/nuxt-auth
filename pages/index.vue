@@ -15,7 +15,7 @@ const session = authClient.useSession();
     <p class="text-lg mb-8">
       Welcome to the Nuxt application with Better Auth integration!
     </p>
-    <div class="flex space-x-4">
+    <div class="flex space-x-4" v-if="!session?.data">
       <NuxtLink to="auth/login" class="btn btn-primary">Login</NuxtLink>
       <NuxtLink to="auth/register" class="btn btn-accent btn-outline"
         >Sign Up</NuxtLink
@@ -23,17 +23,6 @@ const session = authClient.useSession();
     </div>
 
     <div>
-      <button
-        v-if="!session?.data"
-        @click="
-          () =>
-            authClient.signIn.social({
-              provider: 'github',
-            })
-        "
-      >
-        Continue with GitHub
-      </button>
       <div>
         <pre>{{ session.data }}</pre>
         <button v-if="session.data" @click="authClient.signOut()">
